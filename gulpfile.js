@@ -108,7 +108,7 @@ gulp.task("server", function () {
 
   gulp.watch("source/less/**/*.less", gulp.series("css", "min-css", "update"));
   gulp.watch("source/*.html", gulp.series("copy", "update"));
-  gulp.watch("source/**/*.js", gulp.series("copy", "update"));
+  gulp.watch("source/**/*.js", gulp.series("min-js", "update"));
 });
 
 gulp.task("start", gulp.series("build_this", "server"));
