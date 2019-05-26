@@ -96,6 +96,7 @@ function checkForWinner() {
 for (var i = 0; i < cells.length; i++) {
   cells[i].addEventListener("click", function(evt) {
     if (evt.target.classList.contains("empty")) {
+      clickNumber++;
       if (field.classList.contains("x-turn")) {
         evt.target.classList.add("x");
       }
@@ -106,7 +107,6 @@ for (var i = 0; i < cells.length; i++) {
       field.classList.toggle("x-turn");
       field.classList.toggle("o-turn");
     }
-    clickNumber++;
     if(clickNumber >= 5) {
       checkForWinner();
       //Минимальное количество ходов чтобы кто-то победил = 5
