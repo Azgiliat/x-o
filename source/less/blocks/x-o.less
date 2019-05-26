@@ -20,11 +20,16 @@ body {
 }
 
 .o {
-  width: 250px;
-  height: 250px;
-  border-radius: 50%;
-  border: @yellow 3px solid;
-  margin: auto;
+  &::before {
+    content: "";
+    position: absolute;
+    width: 250px;
+    height: 250px;
+    top: calc(50% - 125px);
+    left: calc(50% - 125px);
+    border-radius: 50%;
+    border: @yellow 3px solid;
+  }
 }
 
 .x {

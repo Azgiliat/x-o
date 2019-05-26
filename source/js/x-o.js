@@ -2,14 +2,15 @@ var field = document.querySelector(".field");
 var cells = document.querySelectorAll(".cell");
 
 for (var i = 0; i < cells.length; i++) {
-  cells[i].addEventListener("click", function() {
-    if (cells[i].classList.contains("empty")) {
+  cells[i].addEventListener("click", function(evt) {
+    if (evt.target.classList.contains("empty")) {
       if (field.classList.contains("x-turn")) {
-        cells[i].classList.add("x");
+        evt.target.classList.add("x");
       }
       else {
-        cells[i].classList.add("o");
+        evt.target.classList.add("o");
       }
+      evt.target.classList.remove("empty");
       field.classList.toggle("x-turn");
       field.classList.toggle("o-turn");
     }
